@@ -1,0 +1,10 @@
+postgresql:
+  image: postgres:10.4
+  container_name: turn_taker_pg
+  ports:
+    - 5432:5432
+  environment:
+    - PGDATA=/postgresql
+    - PG_PASSWORD=plokij
+  volumes:
+    - ~/docker-data/turn_taker/data/postgresql:/postgresql

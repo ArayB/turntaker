@@ -1,0 +1,9 @@
+<h1>Whose turn is it anyway?</h1>
+
+<% @activities.each do |activity| %>
+  <div>
+    It is <%= possessive_name(activity.active_participant.name) %> turn to <%= activity.title %>
+    <%= button_to 'Turn taken',  activity_participant_taken_path(activity, activity.active_participant) %>
+  </div>
+<% end %>
+<%= link_to 'Create new', new_activity_path %>

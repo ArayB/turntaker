@@ -1,0 +1,22 @@
+<h1>Create Activity</h1>
+
+<%= form_for @activity do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true %>
+
+  <div>
+    <p>Participants</p>
+    <ul>
+      <%= f.fields_for :participants do |ff| %>
+        <li>
+          <%= ff.label :name %>
+          <%= ff.text_field :name, required: true %>
+          <%= ff.label :active, 'Their turn?' %>
+          <%= ff.check_box :active %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= f.submit 'Create' %>
+<% end %>
