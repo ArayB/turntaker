@@ -81,8 +81,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
   database: turn_taker_production
-  username: turn_taker
-  password: <%= ENV['TURN_TAKER_DATABASE_PASSWORD'] %>
+  # username: turn_taker
+  # password: <%= ENV['TURN_TAKER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
