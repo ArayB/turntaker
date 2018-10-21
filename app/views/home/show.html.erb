@@ -2,7 +2,7 @@
 
 <% @activities.each do |activity| %>
   <div>
-    It is <%= possessive_name(activity.active_participant.name) %> turn to <%= activity.title %>
+    It is <%= possessive_name(activity.active_participant.name) %> turn to <%= activity.title.downcase %>
     <%= button_to 'Turn taken',  activity_participant_taken_path(activity, activity.active_participant) %>
   </div>
 <% end %>
